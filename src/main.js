@@ -1,14 +1,27 @@
+import {controller} from './controller.js';
 import './style/main.css';
-import {Input} from './input.js';
 
-window.onload = () => {
-  var input = document.getElementsByTagName("input");
-  for(var i = 0; i < input.length; i++){
-    console.log(input[i]);
-  }
-  const name = document.getElementById("name").onchange = (event) => {
-    let nameValue = new Input(event.target.value);
-    console.log(nameValue.Save());
-  }
+window.onload = function(){
+  (function() {
+    var app = {
 
+      init: function() {
+        this.main();
+        this.save()
+      },
+
+      main: function () {
+
+      },
+
+      save: function () {
+        var el = document.getElementById("button");
+        el.onclick = controller.handleClickSave;
+      }
+
+
+    };
+
+    app.init();
+  }());
 }
