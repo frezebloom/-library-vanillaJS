@@ -13,14 +13,16 @@ export var controller = {
     model.saveNewBook(book);
   },
 
-  handleClickEdit: function(event) {
-    console.log(event.target.className);
+  handleClickDelete: function(event){
+    model.deleteBook(event.target.className);
   },
 
-
-  handleClickDelete: function(){
+  handleClickEdit: function(event) {
     console.log(event.target.className);
   }
+
+
+
 
 
 }

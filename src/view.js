@@ -14,7 +14,7 @@ export var view = {
       var el = document.getElementById("content");
 
       var divBook = document.createElement('div');
-      divBook.className = "book"
+      divBook.className = "book";
       divBook.id = item.id;
       divBook.innerHTML = `<div class="nameBook">${item.nameBook}
                            <div class="authorBook">${item.authorBook}</div>
@@ -35,6 +35,11 @@ export var view = {
       var deleteButton = document.getElementsByClassName("deleteButton")[index];
       deleteButton.addEventListener( "click" , controller.handleClickDelete);
     })
+  },
+
+  showQuery: function(){
+    document.getElementById("query").style.display = "block";
+
   }
 
 
