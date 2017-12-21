@@ -36,9 +36,12 @@ export var model = {
   deleteBook: function(id){
     // localStorage.removeItem(id);
     view.showQuery();
+  },
+
+  //закрыть модульное окно
+  closeQueryWindow: function(){
+    view.closeQuery();
   }
-
-
 
 
 }

@@ -17,9 +17,14 @@ export var controller = {
     model.deleteBook(event.target.className);
   },
 
+  handleClickQueryNo: function(){
+    model.closeQueryWindow();
+    
+  },
+
   handleClickEdit: function(event) {
     console.log(event.target.className);
-  }
+  },
 
 
 

@@ -39,7 +39,11 @@ export var view = {
 
   showQuery: function(){
     document.getElementById("query").style.display = "block";
+  },
 
+  closeQuery: function(){
+    document.getElementById("query").style.display = "none";
+    console.log('sa');
   }
 
 

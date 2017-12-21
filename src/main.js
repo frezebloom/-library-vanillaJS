@@ -10,6 +10,7 @@ window.onload = function(){
       init: function() {
         this.main();
         this.save()
+        this.noDelete();
         model.showStorage();
       },
 
@@ -21,6 +22,11 @@ window.onload = function(){
         var el = document.getElementById("button");
         el.onclick = controller.handleClickSave;
       },
+
+      noDelete: function(){
+        var el = document.getElementById("no");
+        el.onclick = function(){console.log('sa')}
+      }
 
     };
 
