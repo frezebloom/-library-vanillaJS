@@ -1,5 +1,6 @@
 import {model} from './model.js'
 
+
 export var controller = {
 
   handleClickSave: function() {
@@ -10,6 +11,16 @@ export var controller = {
       numberPages : document.getElementById("numberPages").value
     }
     model.saveNewBook(book);
+  },
+
+  handleClickEdit: function(event) {
+    console.log(event.target.className);
+  },
+
+
+  handleClickDelete: function(){
+    console.log(event.target.className);
   }
+
 
 }

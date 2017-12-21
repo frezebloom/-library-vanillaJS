@@ -13,15 +13,14 @@ window.onload = function(){
         model.showStorage();
       },
 
-      main: function () {
+      main: function() {
 
       },
 
       save: function () {
         var el = document.getElementById("button");
         el.onclick = controller.handleClickSave;
-      }
-
+      },
 
     };
 

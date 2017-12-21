@@ -1,5 +1,6 @@
 import editIcon from './img/edit.png';
 import deleteIcon from './img/delete.png';
+import {controller} from './controller.js';
 
 export var view = {
 
@@ -10,8 +11,8 @@ export var view = {
   showBooks: function (books) {
 
     books.map(function(item, index){
-      console.log(item);
       var el = document.getElementById("content");
+
       var divBook = document.createElement('div');
       divBook.className = "book"
       divBook.id = item.id;
@@ -19,15 +20,26 @@ export var view = {
                            <div class="authorBook">${item.authorBook}</div>
                            <div class="buttonGroup">
                             <div class="editButton">
-                              <img src=${editIcon} />
+                              <img src=${editIcon} class=${item.id} />
                             </div>
                             <div class="deleteButton">
-                              <img src=${deleteIcon} />
+                              <img src=${deleteIcon} class=${item.id} />
                             </div>
                            </div>
                            `
       el.appendChild(divBook);
-    })
 
+      var editButton = document.getElementsByClassName("editButton")[index];
+      editButton.addEventListener( "click" , controller.handleClickEdit);
+
+      var deleteButton = document.getElementsByClassName("deleteButton")[index];
+      deleteButton.addEventListener( "click" , controller.handleClickDelete);
+    })
   }
+
+
+
+
+
+
 }

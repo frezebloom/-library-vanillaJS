@@ -13,7 +13,7 @@ export var model = {
 
   },
 
-
+  //Показать все элементы хранилища
   showStorage: function(){
 
     var arr = [];
@@ -28,7 +28,7 @@ export var model = {
 
     view.clearDom();
     view.showBooks(books);
-    
+
   }
 
 }
