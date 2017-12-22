@@ -3,6 +3,7 @@ import {model} from './model.js'
 
 export var controller = {
 
+  //Обработчик события 'СОХРАНИТЬ КНИГУ'
   handleClickSave: function() {
     var book = {
       nameBook    : document.getElementById("name").value,
@@ -13,15 +14,12 @@ export var controller = {
     model.saveNewBook(book);
   },
 
+  //Обработчик события 'УДАЛИТЬ КНИГУ'
   handleClickDelete: function(event){
     model.deleteBook(event.target.className);
   },
 
-  handleClickQueryNo: function(){
-    model.closeQueryWindow();
-    
-  },
-
+  //Обработчик события 'ИЗМЕНИТЬ КНИГУ'
   handleClickEdit: function(event) {
     console.log(event.target.className);
   },

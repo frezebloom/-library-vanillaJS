@@ -8,6 +8,7 @@ export var view = {
     var el = document.getElementById("content").innerHTML = '';
   },
 
+  //Показать все книги
   showBooks: function (books) {
 
     books.map(function(item, index){
@@ -37,13 +38,14 @@ export var view = {
     })
   },
 
+  //Показать модальное окно
   showQuery: function(){
     document.getElementById("query").style.display = "block";
   },
 
+  //Скрыть модальное окно
   closeQuery: function(){
     document.getElementById("query").style.display = "none";
-    console.log('sa');
   }
 
 

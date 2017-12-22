@@ -2,6 +2,7 @@ import {view} from './view.js'
 
 export var model = {
 
+  //Сохранить в хранилище
   saveNewBook: function(book){
 
     var size = localStorage.length;
@@ -32,16 +33,13 @@ export var model = {
 
   },
 
-
+  //Удалить книгу
   deleteBook: function(id){
     // localStorage.removeItem(id);
     view.showQuery();
   },
 
-  //закрыть модульное окно
-  closeQueryWindow: function(){
-    view.closeQuery();
-  }
+
 
 
 }

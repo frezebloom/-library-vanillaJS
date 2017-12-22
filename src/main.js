@@ -1,5 +1,6 @@
 import {controller} from './controller.js';
 import {model} from './model.js';
+import {view} from './view.js'
 
 import './style/main.css';
 
@@ -25,7 +26,7 @@ window.onload = function(){
 
       noDelete: function(){
         var el = document.getElementById("no");
-        el.onclick = function(){console.log('sa')}
+        el.onclick = view.closeQuery;
       }
 
     };
