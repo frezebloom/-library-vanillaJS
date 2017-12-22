@@ -33,13 +33,12 @@ export var model = {
 
   },
 
-  //Удалить книгу
-  deleteBook: function(id){
-    // localStorage.removeItem(id);
+  //Модальное окно удаления
+  ModalWindowDeleteBook: function(id){
     view.showQuery();
   },
 
-
+// localStorage.removeItem(id);
 
 
 }

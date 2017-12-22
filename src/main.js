@@ -27,6 +27,11 @@ window.onload = function(){
       noDelete: function(){
         var el = document.getElementById("no");
         el.onclick = view.closeQuery;
+      },
+
+      deleteBook: function(){
+        var el = document.getElementById("yes");
+        el.onclick = controller.handleClickDelete;
       }
 
     };
