@@ -21,13 +21,6 @@ export var view = {
                            <div class="authorBook">${item.authorBook}</div>
                            `
       el.appendChild(divBook);
-    
-     
-      // var editButton = document.getElementsByClassName("editButton")[index];
-      // editButton.addEventListener( "click" , controller.handleClickEdit);
-
-      // var deleteButton = document.getElementsByClassName("deleteButton")[index];
-      // deleteButton.addEventListener( "click" , controller.handleClickDelete);
     })
   },
 
@@ -37,10 +30,10 @@ export var view = {
 
     var divBook = document.createElement('div');
     divBook.id = "buttonGroup";
-    divBook.innerHTML = `<div class="editButton">
+    divBook.innerHTML = `<div id="editButton">
                           <img src=${editIcon} />
                          </div>
-                         <div class="deleteButton">
+                         <div id="deleteButton">
                           <img src=${deleteIcon} />
                          </div>`
 
@@ -49,22 +42,39 @@ export var view = {
     //Скрыть блок управления
     var hide = document.getElementById(id);
     hide.addEventListener("mouseleave", this.hideControl);
+
+    //Обработчик модального окна
+    //ИЗМЕНИТЬ КНИГУ
+    var editButton = document.getElementById("editButton");
+    editButton.addEventListener( "click" , this.handleClickEdit);
+
+    //УДАЛИТЬ КНИГУ
+    var deleteButton = document.getElementById("deleteButton");
+    deleteButton.addEventListener( "click" , this.handleClickDelete);
   },
 
   hideControl: function(event){
-    document.getElementById(event.target.id).removeChild(buttonGroup)
+    if(document.getElementById("buttonGroup")){
+      document.getElementById(event.target.id).removeChild(buttonGroup);
+    }
   },
 
- 
-  //Показать модальное окно
-  showQuery: function(){
+  //Показать модальное окно УДАЛИТЬ КНИГУ
+  handleClickDelete: function(event){
     document.getElementById("query").style.display = "block";
   },
 
-  //Скрыть модальное окно
-  closeQuery: function(){
+   //Скрыть модальное окно УДАЛИТЬ КНИГУ
+   closeQuery: function(){
     document.getElementById("query").style.display = "none";
-  }
+  },
+
+  //Модальное окно изменить КНИГУ
+  handleClickEdit: function(){
+
+  },
+
+ 
 
 
 

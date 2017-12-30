@@ -25,18 +25,6 @@ export var controller = {
   },
 
 
-  //Обработчик события 'УДАЛИТЬ КНИГУ'
-  handleClickDelete: function(event){
-    let id =        event.relatedTarget.id;
-    let className = event.relatedTarget.className;
-    model.deleteBook(id, className);
-
-  },
-
-  //Обработчик события 'ИЗМЕНИТЬ КНИГУ'
-  handleClickEdit: function(event) {
-    console.log(event.target.className);
-  },
 
 
 

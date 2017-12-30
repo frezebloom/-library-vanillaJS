@@ -12,7 +12,6 @@ window.onload = function(){
         this.main();
         this.handleClickSave();
         this.showControl();
-        // this.hideControl();
         this.noDelete();
         model.showStorage();
       },
@@ -33,11 +32,7 @@ window.onload = function(){
         el.onmouseover = controller.showControl;
       },
 
-      //Скрыть блок управления
-      hideControl: function(){
-        var el = document.getElementById("content");
-      },
-
+      
       noDelete: function(){
         var el = document.getElementById("no");
         el.onclick = view.closeQuery;
