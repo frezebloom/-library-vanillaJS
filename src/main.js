@@ -10,7 +10,9 @@ window.onload = function(){
 
       init: function() {
         this.main();
-        this.save()
+        this.handleClickSave();
+        this.showControl();
+        // this.hideControl();
         this.noDelete();
         model.showStorage();
       },
@@ -19,9 +21,21 @@ window.onload = function(){
 
       },
 
-      save: function () {
+      //Сохранить документ
+      handleClickSave: function() {
         var el = document.getElementById("button");
         el.onclick = controller.handleClickSave;
+      },
+
+      //Показать блок управления
+      showControl: function(){
+        var el = document.getElementById("content");
+        el.onmouseover = controller.showControl;
+      },
+
+      //Скрыть блок управления
+      hideControl: function(){
+        var el = document.getElementById("content");
       },
 
       noDelete: function(){

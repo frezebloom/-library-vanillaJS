@@ -3,10 +3,9 @@ import {view} from './view.js'
 export var model = {
 
   //Сохранить в хранилище
-  saveNewBook: function(book){
+  handleClickSave: function(book){
 
     var size = localStorage.length;
-    console.log(size);
     book.id = size;
     var newBook = JSON.stringify(book);
     localStorage.setItem(size, newBook);
@@ -15,6 +14,18 @@ export var model = {
 
   },
 
+  //Показать блок управления
+  showControl: function(id, className){
+    if(document.getElementById("buttonGroup")){
+      return false;
+    }
+    if(className === 'book'){
+      view.showControl(id, className);
+    }
+  },
+
+
+  
   //Показать все элементы хранилища
   showStorage: function(){
 

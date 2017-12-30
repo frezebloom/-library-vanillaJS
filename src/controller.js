@@ -1,4 +1,5 @@
 import {model} from './model.js'
+import {view} from './view.js'
 
 
 export var controller = {
@@ -11,12 +12,25 @@ export var controller = {
       yearBook    : document.getElementById("year").value,
       numberPages : document.getElementById("numberPages").value
     }
-    model.saveNewBook(book);
+    model.handleClickSave(book);
   },
+
+  //Обработчик события 'ПОКАЗАТЬ ЭЛЕМЕНТЫ УПРАВЛЕНИЯ КНИГОЙ'
+  showControl: function(event){
+
+    let id =        event.target.id;
+    let className = event.target.className;
+    model.showControl(id, className);
+
+  },
+
 
   //Обработчик события 'УДАЛИТЬ КНИГУ'
   handleClickDelete: function(event){
-    model.deleteBook(event.target.className);
+    let id =        event.relatedTarget.id;
+    let className = event.relatedTarget.className;
+    model.deleteBook(id, className);
+
   },
 
   //Обработчик события 'ИЗМЕНИТЬ КНИГУ'
