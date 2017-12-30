@@ -4,8 +4,9 @@ export var model = {
 
   //Сохранить в хранилище
   handleClickSave: function(book){
-
-    var size = localStorage.length;
+    localStorage.removeItem('loglevel:webpack-dev-server');
+    var size = localStorage.length + 1;
+    
     book.id = size;
     var newBook = JSON.stringify(book);
     localStorage.setItem(size, newBook);
@@ -16,6 +17,7 @@ export var model = {
 
   //Показать блок управления
   showControl: function(id, className){
+    localStorage.removeItem('loglevel:webpack-dev-server');
     if(document.getElementById("buttonGroup")){
       return false;
     }
@@ -30,13 +32,14 @@ export var model = {
   showStorage: function(){
 
     var arr = [];
-    for(var i = 0; i <= localStorage.length; i++) {
-      var showBooks = JSON.parse(localStorage.getItem(i))
+    for (var key in localStorage){
+      var showBooks = localStorage.getItem(key);
       arr.push(showBooks);
+      
     }
 
     var books = arr.filter(function(x) {
-      return x !== undefined && x !== null;
+      return x !== undefined && x !== null && x !== 'INFO';
     });
 
     view.clearDom();
@@ -49,7 +52,12 @@ export var model = {
     view.showQuery();
   },
 
-// localStorage.removeItem(id);
+  //Удалить книгу
+  handleClickDelete: function(id){
+    localStorage.removeItem(id);
+    this.showStorage();
+  }
+
 
 
 }

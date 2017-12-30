@@ -12,7 +12,8 @@ window.onload = function(){
         this.main();
         this.handleClickSave();
         this.showControl();
-        this.noDelete();
+        this.closeQuery();
+        this.deleteBook();
         model.showStorage();
       },
 
@@ -26,22 +27,23 @@ window.onload = function(){
         el.onclick = controller.handleClickSave;
       },
 
-      //Показать блок управления
+      //Показать блок управления 
       showControl: function(){
         var el = document.getElementById("content");
         el.onmouseover = controller.showControl;
       },
 
-      
-      noDelete: function(){
+      //Скрыть модальное окно удаления книги(ПОЛЬЗОВАТЕЛЬ НАЖАЛ НЕТ)
+      closeQuery: function(){
         var el = document.getElementById("no");
         el.onclick = view.closeQuery;
       },
 
+      //Удалить книгу (ПОЛЬЗОВАТЕЛЬ НАЖАЛ ДА)
       deleteBook: function(){
         var el = document.getElementById("yes");
         el.onclick = controller.handleClickDelete;
-      }
+      },
 
     };
 
