@@ -34,7 +34,7 @@ export var view = {
     var divBook = document.createElement('div');
     divBook.id = "buttonGroup";
     divBook.innerHTML = `<div id="editButton">
-                          <img src=${editIcon} />
+                          <img src=${editIcon} class=${token} />
                          </div>
                          <div id="deleteButton">
                           <img src=${deleteIcon} class=${token} />
@@ -49,7 +49,7 @@ export var view = {
     //Обработчик модального окна
     //ИЗМЕНИТЬ КНИГУ
     var editButton = document.getElementById("editButton");
-    editButton.addEventListener( "click" , this.handleClickEdit);
+    editButton.addEventListener( "click" , controller.handleClickEdit);
 
     //УДАЛИТЬ КНИГУ
     var deleteButton = document.getElementById("deleteButton");
@@ -74,14 +74,15 @@ export var view = {
     document.getElementById("query").style.display = "none";
   },
 
+  handleClickEdit: function(nameBook, authorBook, yearBook, numberPages, id){
+    document.getElementById("name").value = nameBook;
+    document.getElementById("author").value = authorBook;
+    document.getElementById("year").value = yearBook;
+    document.getElementById("numberPages").value = numberPages;
+  }
 
 
-
-
-  //Модальное окно изменить КНИГУ
-  handleClickEdit: function(){
-
-  },
+  
 
  
 

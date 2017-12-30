@@ -30,7 +30,13 @@ export var controller = {
     var id = document.getElementById(event.target.id).parentElement.parentElement.className;
     model.handleClickDelete(id);
     view.closeQuery();
-  }
+  },
+
+  //Обработчик события 'ИЗМЕНИТЬ КНИГУ'
+  handleClickEdit: function(event){
+    var id = event.target.className;
+    model.handleClickEdit(id);
+  },
 
 
 

@@ -11,6 +11,11 @@ export var model = {
     var newBook = JSON.stringify(book);
     localStorage.setItem(size, newBook);
 
+    document.getElementById("name").value = '';
+    document.getElementById("author").value = '';
+    document.getElementById("year").value = '';
+    document.getElementById("numberPages").value = '';
+
     this.showStorage();
 
   },
@@ -56,6 +61,12 @@ export var model = {
   handleClickDelete: function(id){
     localStorage.removeItem(id);
     this.showStorage();
+  },
+
+  //Изменить книгу
+  handleClickEdit: function(id){
+    var data = JSON.parse(localStorage.getItem(id));
+    view.handleClickEdit(data.nameBook, data.authorBook, data.yearBook, numberPages, id);
   }
 
 
