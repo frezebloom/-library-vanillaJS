@@ -35,7 +35,7 @@ body{
 }
 .editButton{
   display: inline-block;
-  color: #282D32;
+  color: rgb(70, 70, 68);;
   padding: 10px 30px 10px 30px;
   border: 2px solid #282D32;
   text-align: center;
@@ -49,7 +49,7 @@ body{
   @import url(https://fonts.googleapis.com/css?family=Roboto)
 }
 .editButton:hover{
-  background: #282D32;
+  background: rgb(70, 70, 68);;
   text-align: center;
   color: white;
   transition: 1s ease-out;
@@ -63,6 +63,7 @@ body{
 input{
   border-radius: 5px;
   border-color: #282D32;
+  background: #FFFFFF;
   color: #282D32;
   font-size: 15px;
   outline:0;
@@ -78,7 +79,7 @@ label{
 }
 .button{
   display: block;
-  color: #282D32;
+  color: rgb(70, 70, 68);;
   padding: 10px 30px 10px 30px;
   border: 2px solid #282D32;
   text-align: center;
@@ -92,7 +93,7 @@ label{
   @import url(https://fonts.googleapis.com/css?family=Roboto)
 }
 .button:hover{
-  background: #282D32;
+  background: rgb(70, 70, 68);;
   text-align: center;
   color: white;
   transition: 1s ease-out;
@@ -112,7 +113,7 @@ label{
   width: 39%;
   padding: 10px 30px 10px 30px;
   border: 2px solid #282D32;
-  background:#EFE79D;
+  background:#FFF8DC;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
               0 1px 5px 0 rgba(0, 0, 0, 0.12),
               0 3px 1px -2px rgba(0, 0, 0, 0.2);
@@ -124,12 +125,14 @@ label{
 .labText{
   vertical-align:middle;
 }
-.buttonSearch{
+#buttonSearch{
  float: right;
  cursor: pointer;
+ background: #FFF8DC;
 }
-.search{
+#search{
   width: 70%;
+  background: white;
 }
 
 
@@ -203,7 +206,7 @@ img{
 }
 .queryTitle{
   display: block;
-  background: #282D32;
+  background: rgb(70, 70, 68);
   color: #F5F8FA;
   padding: 7px;
   font-size: 18px;

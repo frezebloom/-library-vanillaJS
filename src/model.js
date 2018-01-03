@@ -40,15 +40,20 @@ export var model = {
     for (var key in localStorage){
       var showBooks = localStorage.getItem(key);
       arr.push(showBooks);
-      
     }
 
     var books = arr.filter(function(x) {
       return x !== undefined && x !== null && x !== 'INFO';
     });
 
+    var arr = [];
+    books.forEach(function(item, index){
+      var books = JSON.parse(item);
+      arr.push(books);
+    });
+
     view.clearDom();
-    view.showBooks(books);
+    view.showBooks(arr);
 
   },
 
@@ -74,7 +79,42 @@ export var model = {
     var editBook = JSON.stringify(book);
     localStorage.setItem(id, editBook);
     this.showStorage();
-  }
+  },
+
+  //Поиск книги
+  searchBook: function(searchValue){
+    var search = searchValue.toLowerCase();
+    var arr = [];
+
+    for (var key in localStorage){
+      var showBooks = localStorage.getItem(key);
+      arr.push(showBooks);
+    }
+
+    var books = arr.filter(function(x) {
+      return x !== undefined && x !== null && x !== 'INFO';
+    });
+
+    var arr = [];
+    books.forEach(function(item, index){
+      var books = JSON.parse(item);
+      arr.push(books);
+    });
+
+    var books = arr.filter(function(data){
+      let nameBook =    data.nameBook.toLowerCase();
+      let authorBook =  data.authorBook.toLowerCase();
+      let yearBook =    data.yearBook.toLowerCase();
+      let numberPages = data.numberPages.toLowerCase();
+      return nameBook.includes(search)   || 
+             authorBook.includes(search) || 
+             yearBook.includes(search)   || 
+             numberPages.includes(search);
+    });
+
+    view.clearDom();
+    view.showBooks(books);
+  },
 
 
 

@@ -16,6 +16,7 @@ window.onload = function(){
         this.deleteBook();
         this.exitEdit();
         this.editBook();
+        this.searchBook();
         model.showStorage();
       },
 
@@ -58,6 +59,12 @@ window.onload = function(){
         var el = document.getElementById("editbutton");
         el.onclick = controller.editBook;
       },
+
+      //Поиск
+      searchBook: function(){
+        var el = document.getElementById("buttonSearch");
+        el.onclick = controller.searchBook;
+      }
 
     };
 

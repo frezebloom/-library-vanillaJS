@@ -13,7 +13,6 @@ export var view = {
 
     books.forEach(function(item, key){
 
-      var item = JSON.parse(item);
       var el = document.getElementById("content");
       var divBook = document.createElement('div');
       divBook.className = "book";

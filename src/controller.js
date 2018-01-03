@@ -55,6 +55,12 @@ export var controller = {
       id          : id
     }
     model.editBook(id, book);
+  },
+
+  //Обработчик события 'ПОИСК КНИГИ'
+  searchBook: function(){
+    var searchValue = document.getElementById("search").value;
+    model.searchBook(searchValue);
   }
   
 
