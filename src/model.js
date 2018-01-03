@@ -66,7 +66,14 @@ export var model = {
   //Изменить книгу
   handleClickEdit: function(id){
     var data = JSON.parse(localStorage.getItem(id));
-    view.handleClickEdit(data.nameBook, data.authorBook, data.yearBook, numberPages, id);
+    view.handleClickEdit(data.nameBook, data.authorBook, data.yearBook, data.numberPages, id);
+  },
+
+  //Сохранить изменения
+  editBook: function(id, book){
+    var editBook = JSON.stringify(book);
+    localStorage.setItem(id, editBook);
+    this.showStorage();
   }
 
 

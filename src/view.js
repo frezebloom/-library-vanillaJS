@@ -74,11 +74,27 @@ export var view = {
     document.getElementById("query").style.display = "none";
   },
 
+  //Редактировать книгу
   handleClickEdit: function(nameBook, authorBook, yearBook, numberPages, id){
-    document.getElementById("name").value = nameBook;
-    document.getElementById("author").value = authorBook;
-    document.getElementById("year").value = yearBook;
-    document.getElementById("numberPages").value = numberPages;
+    document.getElementById("editName").value = nameBook;
+    document.getElementById("editAuthor").value = authorBook;
+    document.getElementById("editYear").value = yearBook;
+    document.getElementById("editNumberPages").value = numberPages;
+    document.getElementById("newBook").style.display = "none";
+    document.getElementById("editBook").style.display = "inline-block";
+    document.getElementById("editBook").className = id;
+    
+  },
+
+  //Выход из режима редактирования
+  exitEdit: function(){
+    document.getElementById("editBook").style.display = "none";
+    document.getElementById("newBook").style.display = "inline-block";
+  },
+
+  //Сохранить изменения книги
+  editBook: function(){
+
   }
 
 

@@ -38,6 +38,26 @@ export var controller = {
     model.handleClickEdit(id);
   },
 
+  //Обработчик события 'ВЫХОД ИЗ РЕЖИМА РЕДАКТИРОВАНИЯ КНИГИ'
+  exitEdit: function(){
+    view.exitEdit();
+  },
+
+  //Обработчик события 'СОХРАНИТЬ ИЗМЕНЕНИЯ'
+  editBook: function(event){
+    var id = document.getElementById(event.target.id).parentElement.parentElement.className;
+  
+    var book = {
+      nameBook    : document.getElementById("editName").value,
+      authorBook  : document.getElementById("editAuthor").value,
+      yearBook    : document.getElementById("editYear").value,
+      numberPages : document.getElementById("editNumberPages").value,
+      id          : id
+    }
+    model.editBook(id, book);
+  }
+  
+
 
 
 

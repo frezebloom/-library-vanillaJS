@@ -8,7 +8,7 @@
     <div id="root"></div>
     <script src="bundle.js"></script>
 
-    <div id="setting">
+    <div id="newBook">
 
       <label class="form">Название</label>
       <input id="name" class="form" type="text"/>
@@ -25,6 +25,26 @@
       <div id="button" class="button">Сохранить</div>
     </div>
 
+    <div id="editBook">
+
+      <label class="form">Название</label>
+      <input id="editName" class="form" type="text"/>
+
+      <label class="form">Автор</label>
+      <input id="editAuthor" class="form" type="text" />
+
+      <label class="form">Год издания</label>
+      <input id="editYear" class="form" type="text" />
+
+      <label class="form">Количество страниц</label>
+      <input id="editNumberPages" class="form" type="text" />
+      <div class="buttonEditGroup">
+        <div id="editbutton" class="editButton">Изменить</div>
+        <div id="exit" class="editButton">Отмена</div>
+      </div>
+
+    </div>
+
     <div id="query">
       <div class="queryTitle">Удаление</div>
       <div class="message">Вы действительно хотите удалить эту книгу?</div>
@@ -34,8 +54,27 @@
       </div>
     </div>
 
-    <div id="content">
 
+  <div class="right">
+
+    <div class="top">
+      
+      <input type="radio" name="sorting" value="author" class="sort" />
+      <span class="labText">по автору</span>
+      <br />
+      
+      <input type="radio" name="sorting" value="name" class="sort" />
+      <span class="labText">по названию</span>
     </div>
+    <div class="top">
+      <input type="text" class="search" placeholder="Что ищем?"/>
+      <br />
+      <input type="button" class="buttonSearch" value="Найти" />
+    </div>
+          
+    <div id="content"></div>
+
+</div>
+
 </body>
 </html>

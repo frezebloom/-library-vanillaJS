@@ -1,16 +1,58 @@
 body{
   margin: 0;
   padding: 0;
-  background: white;
+  background-image: url(../img/back.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #ffffff;
 }
-#setting{
+#newBook{
   display: inline-block;
   margin: 3%;
   border: 2px solid #282D32;
-  width: 30%;
+  background: #FFF8DC;
+  width: 400px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
               0 1px 5px 0 rgba(0, 0, 0, 0.12),
               0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+#editBook{
+  display: none;
+  margin: 3%;
+  border: 2px solid #282D32;
+  background: #FFF8DC;
+  width: 400px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+              0 1px 5px 0 rgba(0, 0, 0, 0.12),
+              0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+.buttonEditGroup{
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.editButton{
+  display: inline-block;
+  color: #282D32;
+  padding: 10px 30px 10px 30px;
+  border: 2px solid #282D32;
+  text-align: center;
+  cursor: pointer;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 30%;
+  font-size: 18px;
+  font-weight: bold;
+  @import url(https://fonts.googleapis.com/css?family=Roboto)
+}
+.editButton:hover{
+  background: #282D32;
+  text-align: center;
+  color: white;
+  transition: 1s ease-out;
 }
 .form{
   display: block;
@@ -55,12 +97,47 @@ label{
   color: white;
   transition: 1s ease-out;
 }
-
-#content{
+.right{
   display: inline-block;
-  text-align: center;
   margin-top: 3%;
   width: 60%;
+  vertical-align: top;
+}
+.top{
+  display: inline-block;
+  vertical-align: top;
+  z-index: 555;
+  height: auto;
+  margin: 1%;
+  width: 39%;
+  padding: 10px 30px 10px 30px;
+  border: 2px solid #282D32;
+  background:#EFE79D;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+              0 1px 5px 0 rgba(0, 0, 0, 0.12),
+              0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+.sort{
+  vertical-align:middle;
+}
+
+.labText{
+  vertical-align:middle;
+}
+.buttonSearch{
+ float: right;
+ cursor: pointer;
+}
+.search{
+  width: 70%;
+}
+
+
+#content{
+  display: block;
+  text-align: center;
+  margin-top: 3%;
+  width: 100%;
   vertical-align: top;
 }
 .book{
@@ -74,6 +151,7 @@ label{
   width: 40%;
   padding: 10px 30px 10px 30px;
   border: 2px solid #282D32;
+  background: #FFF8DC;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
               0 1px 5px 0 rgba(0, 0, 0, 0.12),
               0 3px 1px -2px rgba(0, 0, 0, 0.2);
@@ -112,7 +190,7 @@ img{
   position: fixed;
   z-index: 999;
   text-align: center;
-  background: white;
+  background: #FFF8DC;
   left: 50%;
   top: 30%;
   margin-left: -15%;
@@ -159,3 +237,4 @@ img{
               0 1px 5px 0 rgba(0, 0, 0, 0.12),
               0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
+

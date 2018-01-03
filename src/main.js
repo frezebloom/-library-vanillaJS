@@ -14,6 +14,8 @@ window.onload = function(){
         this.showControl();
         this.closeQuery();
         this.deleteBook();
+        this.exitEdit();
+        this.editBook();
         model.showStorage();
       },
 
@@ -43,6 +45,18 @@ window.onload = function(){
       deleteBook: function(){
         var el = document.getElementById("yes");
         el.onclick = controller.handleClickDelete;
+      },
+
+      //Выход из режима редактирования книги
+      exitEdit: function(){
+        var el = document.getElementById("exit");
+        el.onclick = controller.exitEdit;
+      },
+
+      //Сохранить изменения книги
+      editBook: function(){
+        var el = document.getElementById("editbutton");
+        el.onclick = controller.editBook;
       },
 
     };
