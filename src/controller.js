@@ -61,7 +61,13 @@ export var controller = {
   searchBook: function(){
     var searchValue = document.getElementById("search").value;
     model.searchBook(searchValue);
+  },
+
+  //Обработчик события 'СОРТИРОВКА'
+  sortingBook: function(event){
+    model.sortingBook(event.target.value);
   }
+
   
 
 

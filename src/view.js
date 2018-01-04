@@ -8,7 +8,7 @@ export var view = {
     var el = document.getElementById("content").innerHTML = '';
   },
 
-  //Показать все книги
+  //Показать книги
   showBooks: function (books) {
 
     books.forEach(function(item, key){

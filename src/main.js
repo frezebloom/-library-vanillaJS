@@ -17,6 +17,7 @@ window.onload = function(){
         this.exitEdit();
         this.editBook();
         this.searchBook();
+        this.sortingBook();
         model.showStorage();
       },
 
@@ -64,6 +65,14 @@ window.onload = function(){
       searchBook: function(){
         var el = document.getElementById("buttonSearch");
         el.onclick = controller.searchBook;
+      },
+
+      //Сортировка
+      sortingBook: function(){
+        var author = document.getElementsByName("sorting")[0];
+        var name   = document.getElementsByName("sorting")[1];
+        author.onclick = controller.sortingBook;
+        name.onclick   = controller.sortingBook;
       }
 
     };

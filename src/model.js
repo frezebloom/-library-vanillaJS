@@ -2,6 +2,26 @@ import {view} from './view.js'
 
 export var model = {
 
+  //Вспомогательный метод работы с storage
+  localStorage: function(){
+    var arr = [];
+    for (var key in localStorage){
+      var showBooks = localStorage.getItem(key);
+      arr.push(showBooks);
+    }
+
+    var books = arr.filter(function(x) {
+      return x !== undefined && x !== null && x !== 'INFO';
+    });
+
+    var arr = [];
+    books.forEach(function(item, index){
+      var books = JSON.parse(item);
+      arr.push(books);
+    });
+    return arr;
+  },
+
   //Сохранить в хранилище
   handleClickSave: function(book){
     localStorage.removeItem('loglevel:webpack-dev-server');
@@ -32,29 +52,11 @@ export var model = {
   },
 
 
-  
   //Показать все элементы хранилища
   showStorage: function(){
-
-    var arr = [];
-    for (var key in localStorage){
-      var showBooks = localStorage.getItem(key);
-      arr.push(showBooks);
-    }
-
-    var books = arr.filter(function(x) {
-      return x !== undefined && x !== null && x !== 'INFO';
-    });
-
-    var arr = [];
-    books.forEach(function(item, index){
-      var books = JSON.parse(item);
-      arr.push(books);
-    });
-
+    var arr = this.localStorage();
     view.clearDom();
     view.showBooks(arr);
-
   },
 
   //Модальное окно удаления
@@ -84,22 +86,8 @@ export var model = {
   //Поиск книги
   searchBook: function(searchValue){
     var search = searchValue.toLowerCase();
-    var arr = [];
-
-    for (var key in localStorage){
-      var showBooks = localStorage.getItem(key);
-      arr.push(showBooks);
-    }
-
-    var books = arr.filter(function(x) {
-      return x !== undefined && x !== null && x !== 'INFO';
-    });
-
-    var arr = [];
-    books.forEach(function(item, index){
-      var books = JSON.parse(item);
-      arr.push(books);
-    });
+    
+    var arr = this.localStorage();
 
     var books = arr.filter(function(data){
       let nameBook =    data.nameBook.toLowerCase();
@@ -115,6 +103,11 @@ export var model = {
     view.clearDom();
     view.showBooks(books);
   },
+
+  //Сортировка по автору или по названию
+  sortingBook: function(data){
+
+  }
 
 
 
