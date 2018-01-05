@@ -13,7 +13,7 @@ export var controller = {
       yearBook    : document.getElementById("year").value,
       numberPages : document.getElementById("numberPages").value
     }
-    model.handleClickSave(book);
+    model.validation(book);
 
   },
 

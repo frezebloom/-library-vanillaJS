@@ -51,6 +51,52 @@ export var model = {
 
   },
 
+  //Проверка
+  validation: function(book){
+
+    var error = [];
+    var yearBook = Number(book.yearBook);
+    var numberPages = Number(book.numberPages);
+
+    for(var item in book){
+      if(book[item] === ''){
+        var message = "Заполните все поля";
+        error.push(message);
+        break;
+      }
+    }
+
+    if(book.nameBook.length < 4){
+      var message = "Название книги не может быть меньше 4 символов";
+      error.push(message);
+    }
+
+    if(book.authorBook.length < 4){
+      var message = "Имя автора не может быть меньше 4 символов";
+      error.push(message);
+    }
+
+    if(isNaN(yearBook) || book.yearBook.length < 4 || book.yearBook.length > 4){
+      var message = "Введите правильный год";
+      error.push(message);
+    }
+    
+    if(isNaN(numberPages)){
+      var message = "Введите правильное количество страниц";
+      error.push(message);
+    }
+
+    if(error.length !== 0){
+      view.validation(error);
+      error = [];
+    }
+    else{
+      this.handleClickSave(book);
+    }
+    
+
+  },
+
   //Показать блок управления
   showControl: function(id, className){
     localStorage.removeItem('loglevel:webpack-dev-server');

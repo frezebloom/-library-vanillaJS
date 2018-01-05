@@ -89,17 +89,19 @@ export var view = {
   exitEdit: function(){
     document.getElementById("editBook").style.display = "none";
     document.getElementById("newBook").style.display = "inline-block";
+  },
+
+  //Проверка
+  validation: function(error){
+    document.getElementById("error").innerHTML = '';
+
+    error.forEach(function(item, key){
+      var el = document.getElementById("error");
+      var divBook = document.createElement('li');
+      divBook.innerHTML = `${item}`;
+      el.appendChild(divBook);
+    });  
+     
   }
-  
-
-
-  
-
- 
-
-
-
-
-
 
 }
