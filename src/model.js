@@ -57,6 +57,7 @@ export var model = {
     var arr = this.localStorage();
     view.clearDom();
     view.showBooks(arr);
+    console.log(arr);
   },
 
   //Модальное окно удаления
@@ -106,8 +107,30 @@ export var model = {
 
   //Сортировка по автору или по названию
   sortingBook: function(data){
+    var books = this.localStorage();
+    var sortBy = 'nameBook';
+  
+    books.sort(function(a, b){
 
+      if(data === 'author'){
+        var sortA = a.authorBook;
+        var sortB = b.authorBook;
+      }
+  
+      if(data ==='name'){
+        var sortA = a.nameBook;
+        var sortB = b.nameBook;
+      }
+
+      if(sortA < sortB) return -1;
+      if(sortA > sortB) return 1;
+
+    });
+
+    view.clearDom();
+    view.showBooks(books);
   }
+
 
 
 
