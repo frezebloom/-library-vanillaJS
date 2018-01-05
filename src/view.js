@@ -89,12 +89,8 @@ export var view = {
   exitEdit: function(){
     document.getElementById("editBook").style.display = "none";
     document.getElementById("newBook").style.display = "inline-block";
-  },
-
-  //Сохранить изменения книги
-  editBook: function(){
-
   }
+  
 
 
   

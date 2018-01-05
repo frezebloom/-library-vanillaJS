@@ -45,7 +45,7 @@ export var controller = {
 
   //Обработчик события 'СОХРАНИТЬ ИЗМЕНЕНИЯ'
   editBook: function(event){
-    var id = document.getElementById(event.target.id).parentElement.parentElement.className;
+    var id = Number(document.getElementById(event.target.id).parentElement.parentElement.className);
   
     var book = {
       nameBook    : document.getElementById("editName").value,

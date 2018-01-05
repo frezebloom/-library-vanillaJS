@@ -25,9 +25,20 @@ export var model = {
   //Сохранить в хранилище
   handleClickSave: function(book){
     localStorage.removeItem('loglevel:webpack-dev-server');
-    var size = localStorage.length + 1;
-    
-    book.id = size;
+
+    if(localStorage.length === 0){
+      var size = localStorage.length + 1;
+    }
+    else{
+      var arr = [];
+      this.localStorage().forEach(function(item){
+        arr.push(item.id);
+      });
+        var size = Math.max.apply(null, arr) + 1;
+    }
+  
+    book.id = Number(size);
+
     var newBook = JSON.stringify(book);
     localStorage.setItem(size, newBook);
 
@@ -108,10 +119,9 @@ export var model = {
   //Сортировка по автору или по названию
   sortingBook: function(data){
     var books = this.localStorage();
-    var sortBy = 'nameBook';
-  
+   
     books.sort(function(a, b){
-
+     
       if(data === 'author'){
         var sortA = a.authorBook;
         var sortB = b.authorBook;
