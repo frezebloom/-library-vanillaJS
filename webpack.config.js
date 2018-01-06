@@ -16,20 +16,18 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/
       },
-      
-      
       {
         test: /\.(png|jpg|gif)$/,
         use: [
           {
             loader: 'file-loader',
-            options: {}  
+            options: {
+              name: '[name].[ext]',
+              publicPath: './'
+            }  
           }
         ]
       },
-
-
-      //загрузчик для scss
       {
         test: /\.css$/,
         use: [ 'style-loader', 'css-loader' ]
